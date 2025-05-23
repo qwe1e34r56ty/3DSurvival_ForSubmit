@@ -99,7 +99,7 @@ entity.SetStat("HP", hp - 10f);
 
 ---
 
-![Demo](https://github.com/qwe1e34r56ty/3DSurvival_ForSubmit/issues/1#issue-3085055769)
+![Image](https://github.com/user-attachments/assets/cb9c5aa9-fc6c-4644-afc4-24265d1ddb2a)
 
 
 
