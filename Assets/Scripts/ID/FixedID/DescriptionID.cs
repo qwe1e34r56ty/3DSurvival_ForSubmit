@@ -1,4 +1,4 @@
-public static class DescriptionID
+﻿public static class DescriptionID
 {
     public static string Examine = "Examine";
     public static string Interaction = "Interaction";

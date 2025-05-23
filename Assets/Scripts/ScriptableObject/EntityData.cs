@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,6 +14,7 @@ public class EntityData : ScriptableObject
     [Header("Stat")]
     public List<StatEntry> statKeyWithValueList;
 
+    // String Stat에 가까움
     [Header("Description")]
     public List<DescriptionEntry> descriptionKeyWithValueList;
 }

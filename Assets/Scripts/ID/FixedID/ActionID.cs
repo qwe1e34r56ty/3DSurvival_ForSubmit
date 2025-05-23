@@ -1,4 +1,4 @@
-public static class ActionID
+﻿public static class ActionID
 {
     public static string UpdateableAction = "UpdateableAction";
     public static string MoveControllableAction = "MoveControllableAction";

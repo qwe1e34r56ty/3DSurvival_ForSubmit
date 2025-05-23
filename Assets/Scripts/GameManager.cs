@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Unity.VisualScripting;
@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         LoadSceneObject(gameContext, sceneName);
     }
 
+    //SceneID <-> SceneData 매핑
     private SceneData LoadSceneData(string sceneID)
     {
         string path = $"ScriptableObject/SceneData/{sceneID}";

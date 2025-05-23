@@ -1,12 +1,16 @@
-using System.Security.Cryptography.X509Certificates;
+ï»¿using System.Security.Cryptography.X509Certificates;
 
 public interface IAction
 {
-    // ActionÀ» Entity¿¡ ºÙÀÏ ¶§ ¹ß»ıÇØ¾ß ÇÏ´Â µ¿ÀÛ
+    // Actionì„ Entityì— ë¶™ì¼ ë•Œ ë°œìƒí•´ì•¼ í•˜ëŠ” ë™ì‘
     public void Attach(GameContext gameContext, Entity entity, int priority);
-    // ActionÀ» Entity¿¡¼­ ¶¼¾î³¾ ¶§ ¹ß»ıÇØ¾ß ÇÏ´Â µ¿ÀÛ
+
+    // Actionì„ Entityì—ì„œ ë–¼ì–´ë‚¼ ë•Œ ë°œìƒí•´ì•¼ í•˜ëŠ” ë™ì‘
     public void Detach(GameContext gameContext, Entity entity);
+    
+    // Execute ê°€ëŠ¥ ì—¬ë¶€ return
     public bool CanExecute(GameContext gameContext, Entity entity, float deltaTime);
-    // UpdateableAction ºÙ¾îÀÖ´Â Entity¿¡¼­ µ¿ÀÛ
+
+    // UpdateableAction ë¶™ì–´ìˆëŠ” Entityì—ì„œ ë™ì‘
     public void Execute(GameContext gameContext, Entity entity, float deltaTime);
 }

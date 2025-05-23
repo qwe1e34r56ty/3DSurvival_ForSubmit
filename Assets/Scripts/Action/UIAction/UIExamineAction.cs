@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -41,27 +41,26 @@ public class UIExamineAction : IAction
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         if (Physics.Raycast(ray, out var hit, 17.0f))
         {
-            if (curExamineGameObjects.TryGetValue(entity.gameObject, out var curExamineGameObject))
+            if (!curExamineGameObjects.TryGetValue(entity.gameObject, out var curExamineGameObject))
             {
-                if (hit.collider.gameObject == curExamineGameObject)
-                {
-                    return;
-                }
-                if(hit.collider.gameObject == gameContext.controllableEntity.gameObject)
-                {
-                    return;
-                }
-                if (gameContext.entities.TryGetValue(hit.collider.gameObject, out var curExamineGameEntity))
-                {
-                    if (curExamineGameEntity.GetDescription(DescriptionID.Examine) == null)
-                    {
-                        return;
-                    }
-                    examineTexts[entity.gameObject].gameObject.SetActive(true);
-                    curExamineGameObject = hit.collider.gameObject;
-                    examineTexts[entity.gameObject].SetText(curExamineGameEntity.GetDescription(DescriptionID.Examine));
-                }
+                return;
             }
+            if (hit.collider.gameObject == curExamineGameObject ||
+                hit.collider.gameObject == gameContext.controllableEntity.gameObject)
+            {
+                return;
+            }
+            if (!gameContext.entities.TryGetValue(hit.collider.gameObject, out var curExamineGameEntity))
+            {
+                return;
+            }
+            if (curExamineGameEntity.GetDescription(DescriptionID.Examine) == null)
+            {
+                return;
+            }
+            examineTexts[entity.gameObject].gameObject.SetActive(true);
+            curExamineGameObject = hit.collider.gameObject;
+            examineTexts[entity.gameObject].SetText(curExamineGameEntity.GetDescription(DescriptionID.Examine));
         }
         else
         {

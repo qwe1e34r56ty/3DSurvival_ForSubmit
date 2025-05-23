@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveControllableAction : IAction
 {
@@ -11,11 +11,13 @@ public class MoveControllableAction : IAction
     private float maxPitch = 80f;
     private View currentView;
     
+    // 인칭 시점 열거체
     public enum View{
         View1 = 0,
         View3 = 1,
         Total = 2
     }
+
     public MoveControllableAction()
     {
         cameraVector = new Vector3[(int)View.Total];
@@ -26,7 +28,7 @@ public class MoveControllableAction : IAction
 
     public void Attach(GameContext gameContext, Entity entity, int priority)
     {
-        // Controllable Entity�� �����ϰ� ����
+        // Controllable Entity는 유일하게 유지
         if(gameContext.controllableEntity != null)
         {
             gameContext.controllableEntity.DetachAction(gameContext, this);
@@ -46,6 +48,13 @@ public class MoveControllableAction : IAction
 
     public bool CanExecute(GameContext gameContext, Entity entity, float deltaTime)
     {
+        Rigidbody rigidbody = entity.gameObject.GetComponent<Rigidbody>();
+        if (rigidbody == null)
+        {
+            Logger.LogWarning($"[ControllableAction] [{entity.gameObject.name}] " +
+                $"rigidBody component not found");
+            return false;
+        }
         return true;
     }
 
@@ -97,13 +106,6 @@ public class MoveControllableAction : IAction
     {
         GameObject gameObject = entity.gameObject;
         Rigidbody rigidBody = gameObject.GetComponent<Rigidbody>();
-        if (rigidBody == null)
-        {
-            Logger.LogWarning($"[ControllableAction] [{entity.gameObject.name}] " +
-                $"rigidBody component not found");
-            return;
-        }
-
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         float mouseX = Input.GetAxis("Mouse X");
@@ -129,11 +131,8 @@ public class MoveControllableAction : IAction
     private void ProcessJump(GameContext gameContext, Entity entity)
     {
         bool jump = Input.GetKeyDown(KeyCode.Space);
-        if (!jump)
-        {
-            return;
-        }
-        if (!CanJump(entity))
+        if (!jump ||
+            !CanJump(entity))
         {
             return;
         }
@@ -147,6 +146,7 @@ public class MoveControllableAction : IAction
         }
         else
         {
+            // 현재 남은 공중 점프 Count에 따라서 IsGrounded == false 일 때 점프
             float airJumpCount = entity.GetStat(StatID.AirJumpCount) ?? 0;
             if (airJumpCount < 1)
             {

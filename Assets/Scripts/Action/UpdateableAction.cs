@@ -1,4 +1,4 @@
-public class UpdateableAction : IAction
+﻿public class UpdateableAction : IAction
 {
     public UpdateableAction()
     {

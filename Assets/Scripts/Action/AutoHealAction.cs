@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,19 +29,10 @@ public class AutoHealAction : IAction
         float? hp = entity.GetStat(StatID.Hp);
         float? maxHp = entity.GetStat(StatID.MaxHp);
         float? autoHeal = entity.GetStat(StatID.AutoHeal);
-        if (!hp.HasValue)
-        {
-            return;
-        }
-        if (!maxHp.HasValue)
-        {
-            return;
-        }
-        if (!autoHeal.HasValue)
-        {
-            return;
-        }
-        if (hp > maxHp)
+        if (!hp.HasValue ||
+            !maxHp.HasValue ||
+            !autoHeal.HasValue ||
+            hp > maxHp)
         {
             return;
         }

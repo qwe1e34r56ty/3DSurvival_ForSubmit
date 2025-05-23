@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -42,28 +42,24 @@ public class UIInteractionAction : IAction
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         if (Physics.Raycast(ray, out var hit, 17.0f))
         {
-            if (curInteractionGameObjects.TryGetValue(entity.gameObject, out var curInteractionGameObject))
+            if (!curInteractionGameObjects.TryGetValue(entity.gameObject, out var curInteractionGameObject))
             {
-                if (hit.collider.gameObject == curInteractionGameObject)
+                return;
+            }
+            // hit GameObject가 현재 상호작용 중인 Object와 동일한지 검사
+            if (hit.collider.gameObject != curInteractionGameObject)
+            {
+                // 자기 자신 상호작용 금지 && hit GameObject를 포함한 Entity 존재 여부 검사 && 해당 Entity 상호작용 관련 데이터 존재 여부 검사
+                if (hit.collider.gameObject != gameContext.controllableEntity.gameObject &&
+                    gameContext.entities.TryGetValue(hit.collider.gameObject, out var curInteractionGameEntity) &&
+                    curInteractionGameEntity.GetDescription(DescriptionID.Interaction) != null)
                 {
-                    return;
-                }
-                if (hit.collider.gameObject == gameContext.controllableEntity.gameObject)
-                {
-                    return;
-                }
-                if (gameContext.entities.TryGetValue(hit.collider.gameObject, out var curInteractionGameEntity))
-                {
-                    if (curInteractionGameEntity.GetDescription(DescriptionID.Interaction) == null)
-                    {
-                        return;
-                    }
                     interactionTexts[entity.gameObject].gameObject.SetActive(true);
                     curInteractionGameObject = hit.collider.gameObject;
                     interactionTexts[entity.gameObject].SetText(curInteractionGameEntity.GetDescription(DescriptionID.Interaction));
-                    ProcessInteraction(gameContext, curInteractionGameObject);
                 }
             }
+            ProcessInteraction(gameContext, curInteractionGameObject);
         }
         else
         {

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,6 +46,7 @@ public class UseSpeedBoostAction : IAction
             entity.SetStat(ItemID.SpeedBoost, speedBoostItemCount.Value - 1);
             Logger.Log($"[SpeedBoost] used : [{entity.gameObject.name}]");
 
+            // 이미 사용한 SpeedBoost Item 있을 시 연관된 종료 Coroutine 중지
             if (activeEffects.TryGetValue(entity, out Coroutine existing))
             {
                 gameContext.coroutineHandler.StopRunningCoroutine(existing);

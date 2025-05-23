@@ -1,4 +1,4 @@
-public class MoveableAction : IAction
+﻿public class MoveableAction : IAction
 {
     public MoveableAction()
     {

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class UseRocketJumpAction : IAction
@@ -16,11 +16,17 @@ public class UseRocketJumpAction : IAction
 
     public void Detach(GameContext gameContext, Entity entity)
     {
-
     }
 
     public bool CanExecute(GameContext gameContext, Entity entity, float deltaTime)
     {
+        Rigidbody rigidbody = entity.gameObject.GetComponent<Rigidbody>();
+        if (rigidbody == null)
+        {
+            Logger.LogWarning($"[UseRocketJumpAction] [{entity.gameObject.name}] " +
+                $"rigidBody component not found");
+            return false;
+        }
         return true;
     }
 

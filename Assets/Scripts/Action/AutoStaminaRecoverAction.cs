@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,21 +29,12 @@ public class AutoStaminaRecoverAction : IAction
         float? stamina = entity.GetStat(StatID.Stamina);
         float? maxStamina = entity.GetStat(StatID.MaxStamina);
         float? autoStaminaRecover = entity.GetStat(StatID.AutoStaminaRecover);
-        if (!stamina.HasValue)
+        if (!stamina.HasValue ||
+            !maxStamina.HasValue ||
+            !autoStaminaRecover.HasValue ||
+            stamina > maxStamina)
         {
             return; 
-        }
-        if (!maxStamina.HasValue)
-        {
-            return;
-        }
-        if (!autoStaminaRecover.HasValue)
-        {
-            return;
-        }
-        if (stamina > maxStamina)
-        {
-            return;
         }
         entity.SetStat(StatID.Stamina, 
             Mathf.Min(

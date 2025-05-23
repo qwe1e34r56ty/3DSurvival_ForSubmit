@@ -1,15 +1,14 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameContext
 {
-    public Dictionary<GameObject, Entity> entities;
-    public Dictionary<string, IAction> actions;
+    public Dictionary<GameObject, Entity> entities; // Entity <-> Entity 내 GameObject 매핑
+    public Dictionary<string, IAction> actions; // ActionID <-> IAction 매핑
     public HashSet<IUpdatable> updateHandlers;
-    public Dictionary<GameObject, Queue<Vector3>> forceEventQueue;
-    public Entity controllableEntity;
-    public CoroutineHandler coroutineHandler;
+    public Entity controllableEntity; // 메인카메라 attach 되어 있는 Entity
+    public CoroutineHandler coroutineHandler; // Corountine 호출 담당 Monobehaviour
 
 
 	public GameContext()
@@ -18,7 +17,6 @@ public class GameContext
         actions = new();
         initActions(actions);
         updateHandlers = new();
-        forceEventQueue = new();
         controllableEntity = null;
         coroutineHandler = null;
 	}
@@ -49,11 +47,9 @@ public class GameContext
     public void AddEntity(Entity entity)
     {
         entities.Add(entity.gameObject, entity);
-        forceEventQueue.Add(entity.gameObject, new Queue<Vector3>());
     }
     public void RemoveEntity(Entity entity)
     {
-        forceEventQueue.Remove(entity.gameObject);
         entities.Remove(entity.gameObject);
     }
 }

@@ -1,4 +1,4 @@
-public class EmptyAction : IAction
+﻿public class EmptyAction : IAction
 {
     public EmptyAction()
     {
