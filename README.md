@@ -99,7 +99,7 @@ entity.SetStat("HP", hp - 10f);
 
 ---
 
-![Image](https://github.com/user-attachments/assets/cb9c5aa9-fc6c-4644-afc4-24265d1ddb2a)
+![Image](https://github.com/user-attachments/assets/83bd39e0-254a-4cde-97bd-45dbe1f7dfdd)
 
 
 
