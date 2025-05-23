@@ -59,7 +59,10 @@ public class UIInteractionAction : IAction
                     interactionTexts[entity.gameObject].SetText(curInteractionGameEntity.GetDescription(DescriptionID.Interaction));
                 }
             }
-            ProcessInteraction(gameContext, curInteractionGameObject);
+            if (curInteractionGameObject != null)
+            {
+                ProcessInteraction(gameContext, curInteractionGameObject);
+            }
         }
         else
         {
