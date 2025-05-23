@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e5dc58f7b69dd4db8a76b2ae7d529a, type: 3}
+  m_Name: Tree
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4449476474017885169, guid: ff69fd578bbc6e0459f2bc402c12dd78, type: 3}
+  actionIDWithPriorityList:
+  - actionID: UpdateableAction
+    priority: 0
+  - actionID: UseRocketJumpAction
+    priority: 0
+  - actionID: UseSpeedBoostAction
+    priority: 0
+  - actionID: UseAirJumpAction
+    priority: 0
+  statKeyWithValueList:
+  - key: MoveSpeed
+    value: 7
+  - key: JumpForce
+    value: 150
+  - key: Hp
+    value: 20
+  - key: MaxHp
+    value: 30
+  - key: JumpLaunchForce
+    value: 600
+  - key: RocketJumpForce
+    value: 300
+  - key: Stamina
+    value: 29
+  - key: MaxStamina
+    value: 30
+  - key: MoveSpeedScale
+    value: 1
+  descriptionKeyWithValueList:
+  - key: Examine
+    value: "\uB098\uBB34"
+  - key: Interaction
+    value: "\uAC08\uC544\uD0C0\uAE30[R]"
