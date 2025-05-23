@@ -46,8 +46,6 @@ public class Entity : IUpdatable
             descriptions.Add(entry.key, entry.value);
         }
     }
-
-
     public void Destroy(GameContext gameContext)
     {
         foreach (var pair in sortedActionList.ToList())
@@ -61,7 +59,6 @@ public class Entity : IUpdatable
         sortedActionList.Clear();
         GameObject.Destroy(gameObject);
     }
-
 
     public void Update(GameContext gameContext, float deltaTime)
     {
