@@ -44,12 +44,12 @@ public class UIStaminaBarAction : IAction
         {
             return;
         }
-        float Stamina = context.controllableEntity.GetStat(StatID.Stamina) ?? 0;
+        float stamina = context.controllableEntity.GetStat(StatID.Stamina) ?? 0;
         float maxStamina = context.controllableEntity.GetStat(StatID.MaxStamina) ?? 0;
         if(maxStamina == 0)
         {
             return;
         }
-        image.fillAmount = Mathf.Clamp01(Stamina / maxStamina);
+        image.fillAmount = Mathf.Clamp01(stamina / maxStamina);
     }
 }
