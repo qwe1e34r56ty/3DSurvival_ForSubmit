@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e5dc58f7b69dd4db8a76b2ae7d529a, type: 3}
+  m_Name: UI
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3671449133691996300, guid: 869129feb7d4d864c9b79f0e35d0c25e, type: 3}
+  actionIDWithPriorityList:
+  - actionID: UpdateableAction
+    priority: 0
+  - actionID: UIHpBarAction
+    priority: 0
+  - actionID: UIExamineAction
+    priority: 0
+  - actionID: UIInteractionAction
+    priority: 0
+  - actionID: UIRocketJumpSlotAction
+    priority: 0
+  - actionID: UIAirJumpSlotAction
+    priority: 0
+  - actionID: UISpeedBoostSlotAction
+    priority: 0
+  - actionID: UIStaminaBarAction
+    priority: 0
+  statKeyWithValueList: []
+  descriptionKeyWithValueList: []
