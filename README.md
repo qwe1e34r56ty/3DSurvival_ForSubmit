@@ -76,30 +76,30 @@ entity.SetStat("HP", hp - 10f);
 
 ## 🔄 개선 방향성
 
-# 1. 메시지 큐 기반 상호작용
+### 1. 메시지 큐 기반 상호작용
 - `GameContext.messageQueue.Enqueue(...)` 형식의 메시지 시스템의 도입을 고려
 - Action은 메시지를 수신하고, 자신이 처리할 수 있는 메시지만 대응
 - 이 구조가 완성되면 객체 간 직접 호출 없이 완전한 **익명 메시지 기반 시스템** 완성
 - 현재는 Action 내에서 다른 Entity의 Stat에 접근하지만 메시지 큐를 이용하면 Entity간 완벽한 은닉을 보장
 - 목적지 Entity에서 해당 메시지를 처리하지 않으면 무시되고, 처리되면 소모
 
-# 2. 데이터 관리 구조 변경 
+### 2. 데이터 관리 구조 변경 
 - ScriptableObject 대신 json으로 분리해 빌드 이후에도 Scene, Entity를 수정 가능하도록 설계
 
-# 3. Action들의 그룹화
+### 3. Action들의 그룹화
 - 혹은 디렉토리 분리
 
-# 4. Action <-> Stat 간 연관관계 표현
+### 4. Action <-> Stat 간 연관관계 표현
 - 현재 Action들은 Entity 내 Stat이 null 일 시 default 값 상수를 이용
 - 연관관계를 표현하는 데이터를 생성하고 해당 파일 기반의 경고 내지 알림 필요
 
-# 5. Action <-> Component 간 연관관계 표현
+### 5. Action <-> Component 간 연관관계 표현
 - Collider나 RigidBody 등 Component를 동적으로 추가하는 Action을 생성하거나
 - Action <-> Component 간 연관관계를 표현하는 데이터를 생성하고 해당 데이터 기반의 경고 내지 알림 필요
 
 ---
 
-![Demo](https://private-user-images.githubusercontent.com/134710541/446840988-cb9c5aa9-fc6c-4644-afc4-24265d1ddb2a.gif)
+![Demo](https://github.com/qwe1e34r56ty/3DSurvival_ForSubmit/issues/1#issue-3085055769)
 
 
 
