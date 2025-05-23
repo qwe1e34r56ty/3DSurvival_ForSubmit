@@ -41,16 +41,18 @@ public class UseAirJumpAction : IAction
         float? airJumpItemCount = entity.GetStat(ItemID.AirJump);
         if (airJumpItemCount.HasValue && airJumpItemCount.Value >= 1)
         {
-            float currentMaxAirJumpCount = entity.GetStat(StatID.MaxAirJumpCount) ?? 0;
-            entity.SetStat(StatID.MaxAirJumpCount, currentMaxAirJumpCount + 1);
             entity.SetStat(ItemID.AirJump, airJumpItemCount.Value - 1);
-            Logger.Log($"[AirJump] used : [{entity.gameObject.name}]");
-
             // 이미 사용한 AirJump Item 있을 시 연관된 종료 Coroutine 중지
             if (activeEffects.TryGetValue(entity, out Coroutine existing))
             {
                 gameContext.coroutineHandler.StopRunningCoroutine(existing);
                 Logger.Log($"[AirJump] refreshed : [{entity.gameObject.name}]");
+            }
+            else
+            {
+                float currentMaxAirJumpCount = entity.GetStat(StatID.MaxAirJumpCount) ?? 0;
+                entity.SetStat(StatID.MaxAirJumpCount, currentMaxAirJumpCount + 1);
+                Logger.Log($"[AirJump] used : [{entity.gameObject.name}]");
             }
 
             float duration = entity.GetStat(StatID.AirJumpDuration) ?? defaultAirJumpDuration;
