@@ -8,7 +8,7 @@
 - `Entity`는 데이터를 보관하는 ID 기반 컨테이너에 불과
 - 모든 행위는 **Action 단위로 설계**, Entity는 Action을 `Attach/Detach`만 실행
 - 즉, **Entity는 로직 X**. 로직은 전적으로 Action에만 존재, Entity는 Action을 관리하는 로직만 보유
-- 또한 동적인 Action 관리를 통해 조종하는 오브젝트 변경, 새로운 Action 사용 등의 유연한 오브젝트 관리
+- 또한 동적인 Action 관리를 통해 조종하는 오브젝트 변경, 새로운 Action 사용 등의 유연한 Entity 관리
 
 ```csharp
 entity.AttachAction(gameContext, new MoveableAction());
