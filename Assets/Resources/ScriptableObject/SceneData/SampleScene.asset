@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a9df97f306c794e97b6c6d7283129f, type: 3}
+  m_Name: SampleScene
+  m_EditorClassIdentifier: 
+  entityDataList:
+  - entityData: {fileID: 11400000, guid: fa0d05deed137c74698cdd165527c2f0, type: 2}
+    offsetPosition: {x: 0, y: 0, z: 0}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: bc9540a7881c0f944a4a60101238a5f2, type: 2}
+    offsetPosition: {x: 0, y: 0, z: 0}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: 55f1768df73fc8943a36b128d3a03dbe, type: 2}
+    offsetPosition: {x: 0, y: 0, z: 0}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: 69162f6416ede464ebacda7ca125e3ac, type: 2}
+    offsetPosition: {x: -5, y: 0, z: -10}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: bcff6139964479b43ba8e6e51c8a2f6c, type: 2}
+    offsetPosition: {x: 0, y: 0, z: 0}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: ad0c3d385ce161344b83b2401b1307ec, type: 2}
+    offsetPosition: {x: -10, y: 0, z: -10}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: d19741d36cb48254db007fa8d1e2cae1, type: 2}
+    offsetPosition: {x: 8, y: 1, z: 2}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: 1bb460b633a55724d83dba4238893577, type: 2}
+    offsetPosition: {x: 16, y: 1, z: 2}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: c1c82866382f3a1438381d2c6264f42b, type: 2}
+    offsetPosition: {x: -14, y: 0, z: -10}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: ad0c3d385ce161344b83b2401b1307ec, type: 2}
+    offsetPosition: {x: 16, y: 0, z: 8}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: f80e415002c68724ebf818de1d222625, type: 2}
+    offsetPosition: {x: 0, y: 0, z: 0}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: 2899f26cd2ce4f642843fc168139aae9, type: 2}
+    offsetPosition: {x: 12, y: 5, z: 12}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: 3cab36e39f071cd4eb76c68288a7a5ed, type: 2}
+    offsetPosition: {x: 12, y: 5, z: 20}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: 3cab36e39f071cd4eb76c68288a7a5ed, type: 2}
+    offsetPosition: {x: 12, y: 5, z: 28}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: c4dc1393ef841a64dbbf63b2d93aeff2, type: 2}
+    offsetPosition: {x: 20, y: 5, z: 20}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: c4dc1393ef841a64dbbf63b2d93aeff2, type: 2}
+    offsetPosition: {x: 20, y: 5, z: 28}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: 2899f26cd2ce4f642843fc168139aae9, type: 2}
+    offsetPosition: {x: 28, y: 5, z: 20}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: 117db6817b58ceb4e97c5efaf79b7a30, type: 2}
+    offsetPosition: {x: 28, y: 1, z: 2}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: 2899f26cd2ce4f642843fc168139aae9, type: 2}
+    offsetPosition: {x: 28, y: 5, z: 28}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
+  - entityData: {fileID: 11400000, guid: c0129cffde3f8aa4cab3592feb8fb933, type: 2}
+    offsetPosition: {x: -5, y: 1, z: -20}
+    offsetRotationEuler: {x: 0, y: 0, z: 0}
+    offsetScale: {x: 1, y: 1, z: 1}
